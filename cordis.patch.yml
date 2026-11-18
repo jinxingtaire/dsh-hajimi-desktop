@@ -1,0 +1,3 @@
+- insert:
+    - id: hajimi-desktop
+      name: '@dsh-external/hajimi-desktop'

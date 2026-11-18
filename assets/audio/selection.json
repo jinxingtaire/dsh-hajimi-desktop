@@ -1,0 +1,15 @@
+{
+  "classificationBasis": "user-reviewed",
+  "categories": [
+    { "id": "meow", "label": "普通猫叫", "clips": ["hungry-cat", "cat-meow", "meow-20", "meow-21", "meow-22", "meow-23"] },
+    { "id": "discontent", "label": "不满", "clips": ["meow-13", "meow-14", "meow-15", "meow-16", "meow-29", "phrase-01"] },
+    { "id": "angry", "label": "生气", "clips": ["unhappy-cat"] }
+  ],
+  "presets": {
+    "meow": ["hungry-cat", "cat-meow", "meow-20", "meow-21", "meow-22", "meow-23"],
+    "warn": ["meow-13", "meow-14", "meow-15", "meow-16", "meow-29", "phrase-01"],
+    "threat": ["meow-13", "meow-14", "meow-15", "meow-16", "meow-29", "phrase-01"],
+    "fight": ["unhappy-cat"],
+    "chew": []
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "source": "2491b3fc4d307dfa87569ec9c2d78bc3.mp4",
+  "note": "用户已试听分类：普通 6 条、不满 6 条、生气 1 条。靠近时左右声道分别播放不同不满叫声；距离越近音调越高，音量稳定。",
+  "processing": "原速原调、单声道 AAC；响度目标 -20 LUFS、真峰值 -2dB，首尾短淡化；补充音效仅裁首尾静音，原始 MP3 另存 originals/。",
+  "presets": {
+    "meow": [
+      "hungry-cat",
+      "cat-meow",
+      "meow-20",
+      "meow-21",
+      "meow-22",
+      "meow-23"
+    ],
+    "warn": [
+      "meow-13",
+      "meow-14",
+      "meow-15",
+      "meow-16",
+      "meow-29",
+      "phrase-01"
+    ],
+    "threat": [
+      "meow-13",
+      "meow-14",
+      "meow-15",
+      "meow-16",
+      "meow-29",
+      "phrase-01"
+    ],
+    "fight": [
+      "unhappy-cat"
+    ],
+    "chew": []
+  },
+  "clips": [
+    {
+      "id": "hungry-cat",
+      "label": "饿猫叫",
+      "url": "assets/audio/hungry-cat.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "cry-of-a-hungry-cat.mp3",
+      "originalUrl": "assets/audio/originals/cry-of-a-hungry-cat.mp3",
+      "sourceDuration": 1.483,
+      "start": 0.0731,
+      "end": 1.1591,
+      "duration": 1.086,
+      "suggestedRole": "meow",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "meow"
+    },
+    {
+      "id": "cat-meow",
+      "label": "普通喵叫",
+      "url": "assets/audio/cat-meow.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "the-sound-of-a-cat-quotmeowquot.mp3",
+      "originalUrl": "assets/audio/originals/the-sound-of-a-cat-quotmeowquot.mp3",
+      "sourceDuration": 1.4629,
+      "start": 0.067,
+      "end": 0.9661,
+      "duration": 0.899,
+      "suggestedRole": "meow",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "meow"
+    },
+    {
+      "id": "meow-20",
+      "label": "meow-20",
+      "url": "assets/audio/meow-20.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-20.mp3",
+      "originalUrl": "assets/audio/originals/meow-20.mp3",
+      "sourceDuration": 1.25,
+      "start": 0.0,
+      "end": 1.25,
+      "duration": 1.25,
+      "suggestedRole": "meow",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "meow"
+    },
+    {
+      "id": "meow-21",
+      "label": "meow-21",
+      "url": "assets/audio/meow-21.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-21.mp3",
+      "originalUrl": "assets/audio/originals/meow-21.mp3",
+      "sourceDuration": 1.7,
+      "start": 0.0,
+      "end": 1.7,
+      "duration": 1.7,
+      "suggestedRole": "meow",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "meow"
+    },
+    {
+      "id": "meow-22",
+      "label": "meow-22",
+      "url": "assets/audio/meow-22.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-22.mp3",
+      "originalUrl": "assets/audio/originals/meow-22.mp3",
+      "sourceDuration": 0.95,
+      "start": 0.0,
+      "end": 0.95,
+      "duration": 0.95,
+      "suggestedRole": "meow",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "meow"
+    },
+    {
+      "id": "meow-23",
+      "label": "meow-23",
+      "url": "assets/audio/meow-23.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-23.mp3",
+      "originalUrl": "assets/audio/originals/meow-23.mp3",
+      "sourceDuration": 1.3,
+      "start": 0.0,
+      "end": 1.3,
+      "duration": 1.3,
+      "suggestedRole": "meow",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "meow"
+    },
+    {
+      "id": "meow-13",
+      "label": "meow-13",
+      "url": "assets/audio/meow-13.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-13.mp3",
+      "originalUrl": "assets/audio/originals/meow-13.mp3",
+      "sourceDuration": 2.9007,
+      "start": 0.0,
+      "end": 2.9007,
+      "duration": 2.9,
+      "suggestedRole": "warn",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "discontent",
+      "pitchVariants": [
+        {
+          "semitones": 0,
+          "url": "assets/audio/meow-13.m4a",
+          "duration": 2.9
+        },
+        {
+          "semitones": 1,
+          "url": "assets/audio/pitch/meow-13-up1.wav",
+          "duration": 2.9
+        },
+        {
+          "semitones": 2,
+          "url": "assets/audio/pitch/meow-13-up2.wav",
+          "duration": 2.9
+        },
+        {
+          "semitones": 3,
+          "url": "assets/audio/pitch/meow-13-up3.wav",
+          "duration": 2.9
+        },
+        {
+          "semitones": 4,
+          "url": "assets/audio/pitch/meow-13-up4.wav",
+          "duration": 2.9
+        }
+      ]
+    },
+    {
+      "id": "meow-14",
+      "label": "meow-14",
+      "url": "assets/audio/meow-14.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-14.mp3",
+      "originalUrl": "assets/audio/originals/meow-14.mp3",
+      "sourceDuration": 1.5,
+      "start": 0.0,
+      "end": 1.5,
+      "duration": 1.5,
+      "suggestedRole": "warn",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "discontent",
+      "pitchVariants": [
+        {
+          "semitones": 0,
+          "url": "assets/audio/meow-14.m4a",
+          "duration": 1.5
+        },
+        {
+          "semitones": 1,
+          "url": "assets/audio/pitch/meow-14-up1.wav",
+          "duration": 1.5
+        },
+        {
+          "semitones": 2,
+          "url": "assets/audio/pitch/meow-14-up2.wav",
+          "duration": 1.5
+        },
+        {
+          "semitones": 3,
+          "url": "assets/audio/pitch/meow-14-up3.wav",
+          "duration": 1.5
+        },
+        {
+          "semitones": 4,
+          "url": "assets/audio/pitch/meow-14-up4.wav",
+          "duration": 1.5
+        }
+      ]
+    },
+    {
+      "id": "meow-15",
+      "label": "meow-15",
+      "url": "assets/audio/meow-15.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-15.mp3",
+      "originalUrl": "assets/audio/originals/meow-15.mp3",
+      "sourceDuration": 2.8,
+      "start": 0.0,
+      "end": 2.8,
+      "duration": 2.8,
+      "suggestedRole": "warn",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "discontent",
+      "pitchVariants": [
+        {
+          "semitones": 0,
+          "url": "assets/audio/meow-15.m4a",
+          "duration": 2.8
+        },
+        {
+          "semitones": 1,
+          "url": "assets/audio/pitch/meow-15-up1.wav",
+          "duration": 2.8
+        },
+        {
+          "semitones": 2,
+          "url": "assets/audio/pitch/meow-15-up2.wav",
+          "duration": 2.8
+        },
+        {
+          "semitones": 3,
+          "url": "assets/audio/pitch/meow-15-up3.wav",
+          "duration": 2.8
+        },
+        {
+          "semitones": 4,
+          "url": "assets/audio/pitch/meow-15-up4.wav",
+          "duration": 2.8
+        }
+      ]
+    },
+    {
+      "id": "meow-16",
+      "label": "meow-16",
+      "url": "assets/audio/meow-16.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-16.mp3",
+      "originalUrl": "assets/audio/originals/meow-16.mp3",
+      "sourceDuration": 2.45,
+      "start": 0.0,
+      "end": 2.45,
+      "duration": 2.45,
+      "suggestedRole": "warn",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "discontent",
+      "pitchVariants": [
+        {
+          "semitones": 0,
+          "url": "assets/audio/meow-16.m4a",
+          "duration": 2.45
+        },
+        {
+          "semitones": 1,
+          "url": "assets/audio/pitch/meow-16-up1.wav",
+          "duration": 2.45
+        },
+        {
+          "semitones": 2,
+          "url": "assets/audio/pitch/meow-16-up2.wav",
+          "duration": 2.45
+        },
+        {
+          "semitones": 3,
+          "url": "assets/audio/pitch/meow-16-up3.wav",
+          "duration": 2.45
+        },
+        {
+          "semitones": 4,
+          "url": "assets/audio/pitch/meow-16-up4.wav",
+          "duration": 2.45
+        }
+      ]
+    },
+    {
+      "id": "meow-29",
+      "label": "meow-29",
+      "url": "assets/audio/meow-29.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "meow-29.mp3",
+      "originalUrl": "assets/audio/originals/meow-29.mp3",
+      "sourceDuration": 1.6,
+      "start": 0.0,
+      "end": 1.6,
+      "duration": 1.6,
+      "suggestedRole": "warn",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "discontent",
+      "pitchVariants": [
+        {
+          "semitones": 0,
+          "url": "assets/audio/meow-29.m4a",
+          "duration": 1.6
+        },
+        {
+          "semitones": 1,
+          "url": "assets/audio/pitch/meow-29-up1.wav",
+          "duration": 1.6
+        },
+        {
+          "semitones": 2,
+          "url": "assets/audio/pitch/meow-29-up2.wav",
+          "duration": 1.6
+        },
+        {
+          "semitones": 3,
+          "url": "assets/audio/pitch/meow-29-up3.wav",
+          "duration": 1.6
+        },
+        {
+          "semitones": 4,
+          "url": "assets/audio/pitch/meow-29-up4.wav",
+          "duration": 1.6
+        }
+      ]
+    },
+    {
+      "id": "phrase-01",
+      "label": "连续声段 01",
+      "url": "assets/audio/phrase-01.m4a",
+      "start": 0.08,
+      "end": 4.4,
+      "duration": 4.32,
+      "semanticVerified": true,
+      "category": "discontent",
+      "classificationBasis": "user-reviewed",
+      "sourceGroup": "video",
+      "suggestedRole": "warn",
+      "pitchVariants": [
+        {
+          "semitones": 0,
+          "url": "assets/audio/phrase-01.m4a",
+          "duration": 4.32
+        },
+        {
+          "semitones": 1,
+          "url": "assets/audio/pitch/phrase-01-up1.wav",
+          "duration": 4.32
+        },
+        {
+          "semitones": 2,
+          "url": "assets/audio/pitch/phrase-01-up2.wav",
+          "duration": 4.32
+        },
+        {
+          "semitones": 3,
+          "url": "assets/audio/pitch/phrase-01-up3.wav",
+          "duration": 4.32
+        },
+        {
+          "semitones": 4,
+          "url": "assets/audio/pitch/phrase-01-up4.wav",
+          "duration": 4.32
+        }
+      ]
+    },
+    {
+      "id": "unhappy-cat",
+      "label": "生气猫叫",
+      "url": "assets/audio/unhappy-cat.m4a",
+      "sourceGroup": "supplemental",
+      "sourceFile": "the-sound-when-a-cat-is-unhappy-with-something.mp3",
+      "originalUrl": "assets/audio/originals/the-sound-when-a-cat-is-unhappy-with-something.mp3",
+      "sourceDuration": 0.7953,
+      "start": 0.0,
+      "end": 0.7953,
+      "duration": 0.795,
+      "suggestedRole": "fight",
+      "classificationBasis": "user-reviewed",
+      "semanticVerified": true,
+      "category": "angry"
+    }
+  ],
+  "supplementalCount": 12,
+  "categories": [
+    {
+      "id": "meow",
+      "label": "普通猫叫",
+      "clips": [
+        "hungry-cat",
+        "cat-meow",
+        "meow-20",
+        "meow-21",
+        "meow-22",
+        "meow-23"
+      ]
+    },
+    {
+      "id": "discontent",
+      "label": "不满",
+      "clips": [
+        "meow-13",
+        "meow-14",
+        "meow-15",
+        "meow-16",
+        "meow-29",
+        "phrase-01"
+      ]
+    },
+    {
+      "id": "angry",
+      "label": "生气",
+      "clips": [
+        "unhappy-cat"
+      ]
+    }
+  ],
+  "pitchPolicy": {
+    "minSemitones": 0,
+    "maxSemitones": 4,
+    "keepTempo": true,
+    "pairGain": 0.2
+  }
+}

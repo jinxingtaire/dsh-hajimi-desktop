@@ -1,0 +1,35 @@
+{
+  "stress": {
+    "file": "stress.gif",
+    "width": 512,
+    "height": 512,
+    "frames": 16,
+    "fps": 12,
+    "transparent": true,
+    "loop": true,
+    "bytes": 609403,
+    "sourceSheet": "sheets/stress.png"
+  },
+  "warn": {
+    "file": "warn.gif",
+    "width": 512,
+    "height": 512,
+    "frames": 8,
+    "fps": 8,
+    "transparent": true,
+    "loop": true,
+    "bytes": 295355,
+    "sourceSheet": "sheets/stress.png"
+  },
+  "grooming": {
+    "file": "grooming.gif",
+    "width": 512,
+    "height": 512,
+    "frames": 16,
+    "fps": 10,
+    "transparent": true,
+    "loop": true,
+    "bytes": 557021,
+    "sourceSheet": "sheets/grooming.png"
+  }
+}

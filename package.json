@@ -1,0 +1,19 @@
+{
+  "name": "@dsh-external/hajimi-desktop",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "哈吉咪桌宠：透明桌面悬浮、多猫距离应激、双声道猫叫与烟雾打架。",
+  "main": "./dsh/index.mjs",
+  "exports": { ".": "./dsh/index.mjs", "./package.json": "./package.json" },
+  "files": ["dsh", "desktop", "engine.mjs", "audio.mjs", "pet-view.mjs", "assets/audio/manifest.json", "assets/audio/*.m4a", "assets/audio/pitch", "assets/pets/hajimi-v1/*.gif", "assets/pets/hajimi-v1/frames/stress/00.png", "assets/pets/hajimi-gray-v1/*.gif", "assets/pets/hajimi-gray-v1/frames/stress/00.png", "cordis.patch.yml", "dsh.plugin.json", "README.md"],
+  "engines": { "node": ">=22", "dsh": ">=0.2.2-rc.1" },
+  "dsh": { "manifestVersion": 1, "bundle": { "patch": "./cordis.patch.yml" } },
+  "scripts": {
+    "start": "python3 -m http.server 8788 --bind 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "desktop": "node dsh/standalone.mjs",
+    "pack:plugin": "npm pack --pack-destination output"
+  },
+  "dependencies": { "electron": "45.3.3" }
+}

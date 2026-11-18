@@ -1,0 +1,63 @@
+<!doctype html><meta charset="utf-8"><title>音频声道验证</title>
+<style>body{font:16px system-ui;padding:32px;color:#333;background:#faf8f2}pre{white-space:pre-wrap;line-height:1.8}button{padding:12px 20px}</style>
+<h1>音频声道验证</h1><button id="run">运行音频检查</button><pre id="result">等待运行</pre>
+<script type="module">
+import {CatAudioMixer,audioLevels} from '../audio.mjs';
+const result=document.querySelector('#result');
+const report=[];
+function check(value,label){if(!value)throw new Error(label);report.push(`通过：${label}`);}
+function stats(data,offset=0,end=data.length){let sum=0,peak=0;for(let i=offset;i<end;i++){sum+=data[i]*data[i];peak=Math.max(peak,Math.abs(data[i]));}return {rms:Math.sqrt(sum/(end-offset)),peak};}
+async function render(manifest,{pan=null,ratio=1.5,release=false}={}){
+  const context=new OfflineAudioContext(2,Math.ceil(4.8*44100),44100);
+  const mixer=new CatAudioMixer({manifest,contextFactory:()=>context,fetchBytes:url=>fetch('/'+url).then(r=>r.arrayBuffer()),random:()=>.4});
+  await mixer.setEnabled(true);
+  let voices;
+  if(pan!==null)mixer.startVoice('meow-13',{pan,level:audioLevels.pair});
+  else{
+    const cats=[{id:1,x:100,y:200,size:160,state:'warn',partner:2},{id:2,x:100+160*ratio,y:200,size:160,state:'warn',partner:1}];
+    mixer.sync(cats);voices=mixer.snapshot();
+    if(release){cats.forEach(p=>p.state='idle');mixer.sync(cats);}
+  }
+  const buffer=await context.startRendering();
+  return {left:stats(buffer.getChannelData(0)),right:stats(buffer.getChannelData(1)),tail:stats(buffer.getChannelData(0),Math.floor(.2*44100)),voices};
+}
+async function renderFight(manifest,mute=false){
+  const context=new OfflineAudioContext(2,3*44100,44100);
+  const mixer=new CatAudioMixer({manifest,contextFactory:()=>context,fetchBytes:url=>fetch('/'+url).then(r=>r.arrayBuffer())});
+  await mixer.setEnabled(true);
+  const cats=[{id:1,state:'fight',partner:2},{id:2,state:'fight',partner:1}];
+  for(let i=0;i<20;i++)mixer.sync(cats);
+  const loops=mixer.fightSnapshot();
+  const stopping=context.suspend(2.4).then(async()=>{
+    if(mute)await mixer.setEnabled(false);
+    else{cats.forEach(c=>c.state='recover');mixer.sync(cats);}
+    return context.resume();
+  });
+  const buffer=await context.startRendering();await stopping;
+  return {loops,late:stats(buffer.getChannelData(0),Math.floor(1.7*44100),Math.floor(2.3*44100)),tail:stats(buffer.getChannelData(0),Math.floor(2.6*44100)),after:mixer.fightSnapshot()};
+}
+document.querySelector('#run').onclick=async()=>{
+  result.textContent='正在用真实音频渲染左右声道……';report.length=0;
+  try{
+    const manifest=await fetch('../assets/audio/manifest.json',{cache:'no-store'}).then(r=>r.json());
+    const left=await render(manifest,{pan:-1});
+    check(left.left.rms>.0001&&left.right.rms<1e-7,'左声源仅进入左声道');
+    const right=await render(manifest,{pan:1});
+    check(right.right.rms>.0001&&right.left.rms<1e-7,'右声源仅进入右声道');
+    const far=await render(manifest,{ratio:2.1}),near=await render(manifest,{ratio:1});
+    check(far.voices.length===2&&far.voices[0].clip!==far.voices[1].clip,'两猫同时使用不同片段');
+    check(near.voices.every((v,i)=>v.pitch>far.voices[i].pitch&&v.level===far.voices[i].level),'靠近提高音调，保持增益');
+    check(near.left.rms>.0001&&near.right.rms>.0001,'两个声道均有独立音频');
+    check(near.left.peak<.7&&near.right.peak<.7,'双猫混音保留峰值余量');
+    const stopped=await render(manifest,{release:true});
+    check(stopped.tail.rms<1e-8,'拉远后 200ms 内声音停止');
+    const fight=await renderFight(manifest);
+    check(fight.loops.length===1&&fight.loops[0].loop,'打架只建立一个循环声源，逐帧更新不重复叠加');
+    check(fight.late.rms>.0001,'短音效在后半段仍循环播放，覆盖整个打架过程');
+    check(fight.tail.rms<1e-8&&fight.after.length===0,'进入舔毛后打架音效淡出停止');
+    const muted=await renderFight(manifest,true);
+    check(muted.tail.rms<1e-8&&muted.after.length===0,'静音会停止打架循环');
+    result.textContent=report.join('\n')+'\n全部通过';result.dataset.passed='true';
+  }catch(error){result.textContent=report.join('\n')+'\n失败：'+error.message;result.dataset.passed='false';}
+};
+</script>

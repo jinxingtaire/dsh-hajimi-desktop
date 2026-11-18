@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>哈吉咪 · 别靠太近</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand"><span class="brand-mark">咪</span><div><strong>别靠太近。</strong><small>哈吉咪桌宠 · 互动样机 01</small></div></div><nav><button id="sound" aria-pressed="false">声音：关</button><button id="assets">猫叫音效</button><button id="reset" title="恢复一只猫">重置</button><button class="primary" id="add">＋ 再来一只</button></nav></header>
+<main id="stage" aria-label="可拖拽的猫咪互动区域"><div class="intro"><p class="eyebrow">保持距离，保持体面</p><h1>平时挺乖的。<br><span>直到另一只来了。</span></h1><p>摸一下，听它回应。<br>再带来一只，慢慢拖近试试。</p></div><div id="pets"></div><div id="clouds"></div></main>
+<footer><span><i></i> 本地互动样机 · 尚未接入 DSH 桌面</span><span id="hint" role="status" aria-live="polite">点一下摸摸，按住就能拎走</span><button id="help">玩法与声音</button></footer>
+<dialog id="guide">
+  <button class="close" id="close" aria-label="关闭">×</button>
+  <p class="eyebrow">使用说明</p><h2>你负责拱火，<br>它们负责嘴硬。</h2>
+  <p>点击猫咪回应；拖拽靠近另一只，会先偏头，再炸毛。贴近并停留片刻，就会吸成一团打架。打完各自低头舔毛回血，恢复后才能再战。</p>
+  <p>支持键盘：Tab 选中猫咪，方向键移动，空格摸摸。右键猫咪或按 S 可切换橘猫 / 灰白虎斑。新加的猫会交替使用两款皮肤，最多六只。</p>
+  <p>打开声音后，单击随机播放普通喵叫。两只猫靠近时，左边的猫从左声道叫，右边从右声道叫；每轮选不同的不满叫声，六条轮完再循环。越近音调越高，音量保持稳定，叫声速度不变。</p>
+  <p class="fine">戴耳机更容易分辨左右声道。烟雾打架期间音效循环播放，分开后淡出；回血时会低头舔前爪、整理毛发。</p>
+  <p><button id="chew-preview">预览舔毛动作</button></p>
+  <p id="audio-status" role="status">正在加载原声音效……</p>
+  <details><summary id="clip-summary">查看全部音效</summary>
+    <p class="fine">按你试听后的分类排列。这里试听原调，互动时按距离平滑升调。</p>
+    <div id="clip-list"></div>
+  </details>
+  <p class="fine">正式 DSH 版需要角色动画包与双猫互动控制器；当前样机不修改你的 DSH 配置。</p>
+</dialog>
+<script type="module" src="app.mjs"></script></body></html>

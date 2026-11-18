@@ -1,0 +1,8 @@
+{
+  "id": "@dsh-external/hajimi-desktop",
+  "version": "0.2.0",
+  "main": "./dsh/index.mjs",
+  "description": "哈吉咪桌宠：透明桌面悬浮、多猫距离应激、双声道猫叫与烟雾打架。",
+  "engines": { "dsh": ">=0.2.2-rc.1" },
+  "contributes": { "tools": [], "skills": [] }
+}
